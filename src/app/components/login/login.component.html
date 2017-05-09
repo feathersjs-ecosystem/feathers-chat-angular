@@ -1,0 +1,31 @@
+<main class="login container">
+  <div class="row">
+    <div class="col-12 col-6-tablet push-3-tablet text-center heading">
+      <h1 class="font-100">Log in or signup</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-6-tablet push-3-tablet col-4-desktop push-4-desktop">
+      <form class="form">
+        <fieldset>
+          <input #email class="block" type="email" name="email" placeholder="email">
+        </fieldset>
+
+        <fieldset>
+          <input #password class="block" type="password" name="password" placeholder="password">
+        </fieldset>
+
+        <button type="button" id="login" class="button button-primary block signup" (click)="login(email.value, password.value)">
+          Log in
+        </button>
+
+        <button type="button" id="signup" class="button button-primary block signup" (click)="signup(email.value, password.value)">
+          Signup
+        </button>
+      </form>
+      <ul>
+        <li *ngFor="let m of messages">{{m}}</li>
+      </ul>
+    </div>
+  </div>
+</main>
