@@ -12,7 +12,7 @@ The [feathers-chat](https://github.com/feathersjs/feathers-chat) server must be 
     npm i -g angular-cli
     
     # clone this repository
-    git clone https://github.com/j2L4e/feathers-chat-angular.git
+    git clone https://github.com/feathersjs/feathers-chat-angular.git
     
     # change directory
     cd feathers-chat-angular
