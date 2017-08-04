@@ -234,6 +234,15 @@ ajv@^4.11.2, ajv@^4.7.0, ajv@^4.9.1:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
+ajv@^5.2.0:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.2.2.tgz#47c68d69e86f5d953103b0074a9430dc63da5e39"
+  dependencies:
+    co "^4.6.0"
+    fast-deep-equal "^1.0.0"
+    json-schema-traverse "^0.3.0"
+    json-stable-stringify "^1.0.1"
+
 align-text@^0.1.1, align-text@^0.1.3:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/align-text/-/align-text-0.1.4.tgz#0cd90a561093f35d0a99256c22b7069433fad117"
@@ -1781,6 +1790,10 @@ extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
+fast-deep-equal@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.0.0.tgz#96256a3bc975595eb36d82e9929d060d893439ff"
+
 fastparse@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.1.tgz#d1e2643b38a94d7583b479060e6c4affc94071f8"
@@ -1830,10 +1843,16 @@ feathers-errors@2.6.1, feathers-errors@^2.0.1, feathers-errors@^2.2.0, feathers-
 feathers-hooks-common@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/feathers-hooks-common/-/feathers-hooks-common-2.0.3.tgz#e9f12abebdbc163f28d4cb4c85094e29aa24635d"
+
+feathers-hooks-common@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/feathers-hooks-common/-/feathers-hooks-common-3.6.1.tgz#c9839b3f0ac7b5e355a07fe561bedcc1560ebef8"
   dependencies:
+    ajv "^5.2.0"
     debug "^2.2.0"
     feathers-errors "^2.4.0"
-    traverse "0.6.6"
+    feathers-hooks "^2.0.1"
+    traverse "^0.6.6"
 
 feathers-hooks@1.8.1:
   version "1.8.1"
@@ -1841,6 +1860,13 @@ feathers-hooks@1.8.1:
   dependencies:
     feathers-commons "^0.8.6"
     feathers-hooks-common "^2.0.3"
+    uberproto "^1.2.0"
+
+feathers-hooks@^2.0.1, feathers-hooks@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/feathers-hooks/-/feathers-hooks-2.0.2.tgz#156facfbe610dcda00e6542aa1b81707944f6485"
+  dependencies:
+    feathers-commons "^0.8.6"
     uberproto "^1.2.0"
 
 feathers-primus@2.1.0:
@@ -2810,6 +2836,10 @@ jsesc@~0.5.0:
 json-loader@^0.5.4:
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.4.tgz#8baa1365a632f58a3c46d20175fc6002c96e37de"
+
+json-schema-traverse@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz#349a6d44c53a51de89b40805c5d5e59b417d3340"
 
 json-schema@0.2.3:
   version "0.2.3"
@@ -4932,7 +4962,7 @@ tough-cookie@~2.3.0:
   dependencies:
     punycode "^1.4.1"
 
-traverse@0.6.6:
+traverse@0.6.6, traverse@^0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
 
