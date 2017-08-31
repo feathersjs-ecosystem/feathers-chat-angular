@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { FeathersService } from './feathers.service';
+import { Feathers } from './feathers.service';
 
 describe('FeathersService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FeathersService]
+      providers: [Feathers]
     });
   });
 
-  it('should ...', inject([FeathersService], (service: FeathersService) => {
+  it('should ...', inject([Feathers], (service: Feathers) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -16,6 +16,7 @@ export class DataService {
     // using some caching mechanism would be wise in more complex applications
     return this.feathers
       .service('messages')
+      .watch()
       .find({
         query: {
           $sort: {createdAt: -1},
@@ -29,6 +30,7 @@ export class DataService {
     // using some caching mechanism would be wise in more complex applications
     return this.feathers
       .service('users')
+      .watch()
       .find();
   }
 

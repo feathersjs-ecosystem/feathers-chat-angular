@@ -36,8 +36,6 @@ export class LoginComponent {
   signup(email: string, password: string) {
     this.feathers.service('users')
       .create({email, password})
-      .take(1)
-      .toPromise()
       .then(() => this.messages.push('User created.'))
       .catch(err => this.messages.push('Could not create user!'))
     ;

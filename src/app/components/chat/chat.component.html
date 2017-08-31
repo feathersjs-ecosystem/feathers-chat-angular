@@ -8,7 +8,7 @@
   </header>
 
   <div class="flex flex-row flex-1 clear">
-    <aside class="sidebar col col-3 flex flex-column flex-space-between" *ngIf="users$ | async; let users">
+    <aside class="sidebar col col-3 flex flex-column flex-space-between" *ngIf="users$ | async as users">
       <header class="flex flex-row flex-center">
         <h4 class="font-300 text-center">
           <span class="font-600 online-count">{{users.length}}</span> users

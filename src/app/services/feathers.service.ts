@@ -7,8 +7,6 @@ import * as hooks from 'feathers-hooks';
 import * as socketio from 'feathers-socketio/client';
 import * as authentication from 'feathers-authentication-client';
 
-// TS Lint will complain here. Unfortunately feathers-reactive needs the entire Rx object passed on creation.
-import * as Rx from 'rxjs';
 
 /**
  * Simple wrapper for feathers
@@ -24,7 +22,9 @@ export class Feathers {
 
     this._feathers = feathers();                      // init Feathers
     this._feathers.configure(hooks());                // add hooks plugin
-    this._feathers.configure(feathersRx(Rx));         // add feathers-reactive plugin
+    this._feathers.configure(feathersRx({             // add feathers-reactive plugin
+      idField: '_id'
+    }));
     this._feathers.configure(socketio(this._socket)); // add socket.io plugin
     this._feathers.configure(authentication({         // add authentication plugin
       storage: window.localStorage
