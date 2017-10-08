@@ -24,6 +24,7 @@
     "@angular/router": "^4.0.2",
     "@types/socket.io-client": "^1.4.29",
     "core-js": "^2.4.1",
+    "feathers": "^2.2.2",
     "feathers-authentication-client": "^0.3.1",
     "feathers-client": "^2.0.0",
     "feathers-hooks": "^2.0.2",
