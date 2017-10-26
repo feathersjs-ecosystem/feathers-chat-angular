@@ -1,5 +1,7 @@
 # FeathersChatAngular
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/feathersjs-ecosystem/feathers-chat-angular.svg)](https://greenkeeper.io/)
+
 This is an angular client for feathers' demo chat application [feathers-chat](https://github.com/feathersjs/feathers-chat).
 
 Some of the abstraction layers used are not strictly necessary for this app's (fairly limited) functionality. They were used to follow best-practice and provide an overview of what a more sophisticated application using feathers could look like.
