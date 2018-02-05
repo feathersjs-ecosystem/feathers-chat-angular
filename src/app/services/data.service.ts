@@ -14,8 +14,8 @@ export class DataService {
   messages$() {
     // just returning the observable will query the backend on every subscription
     // using some caching mechanism would be wise in more complex applications
-    return this.feathers
-      .service('messages')
+    return (<any>this.feathers // todo: remove 'any' assertion when feathers-reactive typings are up-to-date with buzzard
+      .service('messages'))
       .watch()
       .find({
         query: {
@@ -28,8 +28,8 @@ export class DataService {
   users$() {
     // just returning the observable will query the backend on every subscription
     // using some caching mechanism would be wise in more complex applications
-    return this.feathers
-      .service('users')
+    return (<any>this.feathers // todo: remove 'any' assertion when feathers-reactive typings are up-to-date with buzzard
+      .service('users'))
       .watch()
       .find();
   }

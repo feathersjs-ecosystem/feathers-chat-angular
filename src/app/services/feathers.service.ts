@@ -1,34 +1,33 @@
 import { Injectable } from '@angular/core';
 
-import * as feathers from 'feathers/client';
 import * as feathersRx from 'feathers-reactive';
 import * as io from 'socket.io-client';
-import * as hooks from 'feathers-hooks';
-import * as socketio from 'feathers-socketio/client';
-import * as authentication from 'feathers-authentication-client';
 
+import feathers from '@feathersjs/feathers';
+import feathersSocketIOClient from '@feathersjs/socketio-client';
+import feathersAuthClient from '@feathersjs/authentication-client';
 
 /**
  * Simple wrapper for feathers
  */
 @Injectable()
 export class Feathers {
-  // There are no proper typings available for feathers, due to its plugin-heavy nature
-  private _feathers: any;
+  private _feathers = feathers();
   private _socket: any;
 
   constructor() {
     this._socket = io('http://localhost:3030');       // init socket.io
 
     this._feathers = feathers();                      // init Feathers
-    this._feathers.configure(hooks());                // add hooks plugin
-    this._feathers.configure(feathersRx({             // add feathers-reactive plugin
-      idField: '_id'
-    }));
-    this._feathers.configure(socketio(this._socket)); // add socket.io plugin
-    this._feathers.configure(authentication({         // add authentication plugin
-      storage: window.localStorage
-    }));
+
+    this._feathers
+      .configure(feathersSocketIOClient(this._socket))  // add socket.io plugin
+      .configure(feathersAuthClient({                   // add authentication plugin
+        storage: window.localStorage
+      }))
+      .configure(feathersRx({                           // add feathers-reactive plugin
+        idField: '_id'
+      }));
   }
 
   // expose services
