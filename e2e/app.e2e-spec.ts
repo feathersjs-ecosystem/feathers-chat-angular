@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ponyracer App', () => {
+describe('feathers-chat-angular App', () => {
   let page: AppPage;
 
   beforeEach(() => {
