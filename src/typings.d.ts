@@ -9,6 +9,6 @@ interface NodeModule {
 // todo: remove when feathers-reactive typings are up-to-date with buzzard
 declare module 'feathers' {
   interface NullableId {}
-  interface Pagination {}
+  interface Pagination<T> {}
   interface Params {}
 }

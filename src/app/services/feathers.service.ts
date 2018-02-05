@@ -12,14 +12,10 @@ import feathersAuthClient from '@feathersjs/authentication-client';
  */
 @Injectable()
 export class Feathers {
-  private _feathers = feathers();
-  private _socket: any;
+  private _feathers = feathers();                     // init socket.io
+  private _socket = io('http://localhost:3030');      // init feathers
 
   constructor() {
-    this._socket = io('http://localhost:3030');       // init socket.io
-
-    this._feathers = feathers();                      // init Feathers
-
     this._feathers
       .configure(feathersSocketIOClient(this._socket))  // add socket.io plugin
       .configure(feathersAuthClient({                   // add authentication plugin
