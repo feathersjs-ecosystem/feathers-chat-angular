@@ -9,7 +9,7 @@ Some of the abstraction layers used are not strictly necessary for this app's (f
 The [feathers-chat](https://github.com/feathersjs/feathers-chat) server must be running. Check their repository for further instructions.
 
     # it's recommended install angular-cli globally, but you don't have to 
-    npm i -g angular-cli
+    npm i -g @angular/cli
     
     # clone this repository
     git clone https://github.com/feathersjs/feathers-chat-angular.git
