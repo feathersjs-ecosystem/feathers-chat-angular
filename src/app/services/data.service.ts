@@ -14,7 +14,7 @@ export class DataService {
   messages$() {
     // just returning the observable will query the backend on every subscription
     // using some caching mechanism would be wise in more complex applications
-    return (<any>this.feathers // todo: remove 'any' assertion when feathers-reactive typings are up-to-date with buzzard
+    return (this.feathers // todo: remove 'any' assertion when feathers-reactive typings are up-to-date with buzzard
       .service('messages'))
       .watch()
       .find({

@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Paginated } from '@feathersjs/feathers';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { DataService } from '../../services/data.service';
 import { AuthService } from '../../services/auth.service';
 
@@ -15,17 +17,19 @@ export class ChatComponent {
 
   constructor(private data: DataService, private auth: AuthService) {
     // get messages from data service
-    this.messages$ = data.messages$()
-      // our data is paginated, so map to .data
-      .map(m => m.data)
-      // reverse the messages array, to have the most recent message at the end
-      // necessary because we get a descendingly sorted array from the data service
-      .map(m => m.reverse());
+    this.messages$ = data.messages$().pipe(
+        // our data is paginated, so map to .data
+        map((m: Paginated<any>) => m.data),
+        // reverse the messages array, to have the most recent message at the end
+        // necessary because we get a descendingly sorted array from the data service
+        map(m => m.reverse()),
+      );
 
     // get users from data service
-    this.users$ = data.users$()
-      // our data is paginated, so map to .data
-      .map(u => u.data);
+    this.users$ = data.users$().pipe(
+        // our data is paginated, so map to .data
+        map((u: Paginated<any>) => u.data)
+      );
   }
 
   sendMessage(message: string) {
