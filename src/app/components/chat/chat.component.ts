@@ -22,7 +22,7 @@ export class ChatComponent {
         map((m: Paginated<any>) => m.data),
         // reverse the messages array, to have the most recent message at the end
         // necessary because we get a descendingly sorted array from the data service
-        map(m => m.reverse()),
+        map((m: Array<any>) => m.reverse()),
       );
 
     // get users from data service
