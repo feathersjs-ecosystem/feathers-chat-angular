@@ -1,3 +1,5 @@
+> __Note:__ All chat examples have been moved to https://github.com/feathersjs/feathers-chat/
+
 # FeathersChatAngular
 
 This is an angular client for feathers' demo chat application [feathers-chat](https://github.com/feathersjs/feathers-chat).
